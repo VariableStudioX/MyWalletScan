@@ -42,6 +42,10 @@ const MenuHeader = () => {
             key: 'stark',
         },
         {
+            label: 'StarkList',
+            key: 'stark_list',
+        },
+        {
             label: 'StarkInfo',
             key: 'stark_info',
         },

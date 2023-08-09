@@ -2,6 +2,7 @@ import MenuHeader from "@pages/MenuHeader/index.jsx";
 import Zksync from "@pages/Zksync/index.jsx";
 import {useLocation} from "react-router-dom";
 import Stark from "@pages/Stark/index.jsx";
+import StarkList from "@pages/StarkList/index.jsx";
 import {Layout} from "antd";
 import Layer from "@pages/Layer/index.jsx";
 import Coffee from "@pages/Coffee/index.jsx";
@@ -51,6 +52,7 @@ function MainPage() {
                         {location.pathname === "/zksync" && <Zksync/>}
                         {location.pathname === '/zk_info' && <ZkInfo/>}
                         {location.pathname === "/stark" && <Stark/>}
+                        {location.pathname === "/stark_list" && <StarkList/>}
                         {location.pathname === "/stark_info" && <StarkInfo/>}
                         {location.pathname === "/linea" && <Linea/>}
                         {location.pathname === "/layer" && <Layer/>}

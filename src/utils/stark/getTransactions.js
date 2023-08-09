@@ -1,5 +1,6 @@
 import axios from "axios";
 import {getTransfers} from "./getTransfers.js";
+import { sleep } from "./utils.js";
 
 async function fetchTransactions(url, Json_data, headers) {
     const response = await axios.post(url, Json_data, {headers: headers});
@@ -56,6 +57,7 @@ export default async function getTransactions(address) {
     let results = await fetchTransactions(url, Json_data, headers);
     allTransactions.push(...results.transactions);
     while (results.hasNextPage) {
+        await sleep(200)
         Json_data['variables']['after'] = results.endCursor;
         results = await fetchTransactions(url, Json_data, headers);
         allTransactions.push(...results.transactions);
